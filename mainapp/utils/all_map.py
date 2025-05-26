@@ -17,7 +17,7 @@ from pyecharts.charts import Map
 
 class AllMap():
     """
-    1: 长沙景点分布地图
+    1: 大连景点分布地图
     2: 景点评分数据表格
     3: 景点浏览人数数据表格
     4: 人数百分比饼图
@@ -51,13 +51,13 @@ class AllMap():
         self.scenery_obj = Scenery.objects.filter(score__isnull=False).exclude(score=0).all().order_by("-score")
 
     def get_county(self, full_county_name):
-        county_list = ['芙蓉区', '天心区', '岳麓区', '望城区', '雨花区', '开福区', '宁乡市', '浏阳市', '长沙县', '宁乡县']
+        county_list = ['中山区', '西岗区', '沙河口区', '甘井子区', '旅顺口区', '金州区', '普兰店区', '瓦房店市', '庄河市', '长海县']
         for i in county_list:
             if i in full_county_name:
                 return i
 
     def get_p1(self, h, w, is_show=False):
-        """长沙景点分布地图"""
+        """大连景点分布地图"""
 
         max_ = int(self.map_data.values.max())
         map = (

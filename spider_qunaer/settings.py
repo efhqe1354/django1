@@ -94,3 +94,13 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'human_web',       # 需提前创建数据库
+        'USER': 'root',   # 默认为 'root'，但需与 MySQL 实际用户一致
+        'PASSWORD': '1234',   # 如果 MySQL 用户无密码，留空或删除该字段
+        'HOST': 'localhost',         # 本地数据库地址
+        'PORT': '3306',              # MySQL 端口（默认 3306）
+    }
+}
